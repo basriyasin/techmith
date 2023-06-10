@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stopwatch Example</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container>div {
+            align-items: center;
+        }
+
+        #timer {
+            text-align: center;
+            display: block;
+            width: 100vw;
+            position: relative;
+            font-size: 10vw;
+            margin-bottom: 10px;
+        }
+
+        #controls {
+            position: relative;
+            display: block;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        #controls button {
+            margin: 10px 10px;
+            padding: 15px;
+            width: 15vw;
+            font-size: 3vw;
+            border: none;
+            color: #fff;
+            border-radius: 1px;
+        }
+
+        #start {
+            background: #18a504;
+        }
+
+        #start:hover {
+            background: #079403;
+        }
+
+        #reset {
+            background: #f82222;
+        }
+        #reset:hover {
+            background: #e71111;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <span id="timer">
+                00:00:00.00
+            </span>
+            <div id="controls">
+                <button id="start">Start</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let startTime
+        let elapsedTime = 0
+        let timerInterval
+        let started = false
+        const startButton = document.getElementById('start')
+        const resetButton = document.getElementById('reset')
+
+        function startTimer() {
+            if (started) {
+                pauseTimer()
+                return
+            }
+            startTime = Date.now() - elapsedTime
+            timerInterval = setInterval(updateTimer, 10)
+            started = true
+            startButton.innerText = 'Pause'
+        }
+
+        function pauseTimer() {
+            clearInterval(timerInterval)
+            started = false
+            startButton.innerText = 'Start'
+        }
+
+        function resetTimer() {
+            pauseTimer()
+            startTime = Date.now()
+            updateTimer()
+        }
+
+        function updateTimer() {
+            const timerElement = document.getElementById('timer')
+            const currentTime = Date.now()
+            elapsedTime = currentTime - startTime
+
+            const formattedTime = formatTime(elapsedTime)
+            timerElement.textContent = formattedTime
+        }
+
+        function formatTime(time) {
+            const ms = Math.floor(time % 1000 / 10)
+            const seconds = Math.floor(time / 1000 % 60)
+            const minutes = Math.floor(time / 1000 / 60 % 60)
+            const hours = Math.floor(time / 1000 / 60 / 60)
+
+            return (
+                pad(hours) + ':' +
+                pad(minutes) + ':' +
+                pad(seconds) + '.' +
+                pad(ms)
+            )
+        }
+
+        function pad(value) {
+            return String(value).padStart(2, '0')
+        }
+
+
+        startButton.addEventListener('click', startTimer)
+        resetButton.addEventListener('click', resetTimer)
+    </script>
+</body>
+
+</html>
