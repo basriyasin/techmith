@@ -1,8 +1,7 @@
 # Techmith
-From normal person to Software Engineering
+## From normal person to Software Engineering
 
-## Description
-Welcome to the "From normal person to software engineer" repository! This comprehensive resource is specifically designed to empower normal person in their journey towards becoming software engineers. Whether you have no coding experience or some basic knowledge, this repository provides a structured curriculum and hands-on projects to bridge the gap between normal person backgrounds and the skills required for a successful career in software engineer.
+Welcome to the repository! This comprehensive resource is specifically designed to empower normal person in their journey towards becoming software engineers. Whether you have no coding experience or some basic knowledge, this repository provides a structured curriculum and hands-on projects to bridge the gap between normal person backgrounds and the skills required for a successful career in software engineer.
 
 ## Key Features
 
