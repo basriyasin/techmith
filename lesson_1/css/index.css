@@ -1,0 +1,78 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    font-family: consolas;
+}
+
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    width: 150px;
+    background: #dbdbdb;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px #aaa;
+    transition: ease-in 0.5s;
+}
+
+.container:hover {
+    background: red;
+    box-shadow: 5px 5px 5px red;
+}
+
+.container:hover >.content{
+    color: white;
+}
+
+.title {
+    font-weight: 800;
+}
+
+.content {
+    color: #525252;
+}
+
+.profile-container {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.profile-container > img {
+    border-radius: 50%;
+    width: 80px;
+    border: 1px solid #79987a;
+    transition: ease-in 0.5s;
+}
+
+.profile-container > img:hover {
+    border: 10px solid #00c306;
+}
+
+
+.profile-container > .content {
+    color: black;
+    font-size: xx-small;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.details {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
