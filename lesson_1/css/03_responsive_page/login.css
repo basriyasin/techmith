@@ -1,0 +1,43 @@
+.main-container {
+    box-shadow: 0px 0px 15px 0px grey;
+}
+
+.green-container {
+    /* background: #3aed96; */
+    background: linear-gradient(120deg, #1beab6, #00f1f1);
+    padding: 20px;
+}
+
+.white-container {
+    /* background: #ffffff; */
+    background: url(https://img.freepik.com/premium-vector/abstract-background-with-modern-style-hexagon-pattern_7505-1722.jpg);
+    padding: 20px
+}
+
+.input-form {
+    margin-top: 15px;
+}
+
+.form-header {
+    margin-top: 30px;
+}
+
+.form-action {
+    margin-top: 30px;
+}
+
+.form-action > input {
+    background: #3aed96;
+    border: none;
+    color: #333333;
+}
+
+.form-action > input:hover {
+    background: #29dc85;
+    color: #333333;
+}
+
+
+.col-md-4.row.green-container.align-items-center {
+    margin-left: 0;
+}
